@@ -20,7 +20,9 @@ public class KnightBoard{
   public String toString(){
     String returnValue = "";
     for (int i = 0; i < rows; i++){
-      for
+      for (int a = 0; a < cols; a++){
+        
+      }
     }
   }
 }
