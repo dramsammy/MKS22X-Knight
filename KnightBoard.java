@@ -18,7 +18,7 @@ public class KnightBoard{
 
 
   public String toString(){
-    String returnValue = "";
+    String returnValue = "\n";
     for (int i = 0; i < rows; i++){
       for (int a = 0; a < cols; a++){
         if (board[i][a] < 10){
@@ -30,5 +30,6 @@ public class KnightBoard{
       }
       returnValue += "\n";
   }
+  return returnValue;
 }
 }
