@@ -18,10 +18,17 @@ public class KnightBoard{
 
 
   public String toString(){
-    String returnValue = " ";
+    String returnValue = "";
     for (int i = 0; i < rows; i++){
       for (int a = 0; a < cols; a++){
-        returnValue += board[i][a] + "  ";
+        if (board[i][a] < 10){
+          returnValue += " " + board[i][a] + " ";
+        }
+        else{
+          returnValue += board[i][a] + " ";
+        }
       }
+      returnValue += "\n";
   }
+}
 }
