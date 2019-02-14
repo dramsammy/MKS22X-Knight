@@ -21,10 +21,13 @@ public class KnightBoard{
     String returnValue = "\n";
     for (int i = 0; i < rows; i++){
       for (int a = 0; a < cols; a++){
-        if (board[i][a] < 10){
+        if (board[i][a] == 0){
+          returnValue += " " + "_" + " ";
+        }
+        if (board[i][a] < 10 && board[i][a] > 0){
           returnValue += " " + board[i][a] + " ";
         }
-        else{
+        if (board[i][a] > 10){
           returnValue += board[i][a] + " ";
         }
       }
