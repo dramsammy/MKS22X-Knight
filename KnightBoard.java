@@ -55,7 +55,9 @@ public class KnightBoard{
     return false;
     }
   public boolean solveH(int row, int col, int counter){
-    
+    if (counter > rows * col){
+      return true; // counter is greater than number of possible moves around the board stop recursion
+    }
   }
   }
 }
