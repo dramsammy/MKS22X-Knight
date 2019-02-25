@@ -48,6 +48,11 @@ public class KnightBoard{
     if (row > rows || col > cols || row < 0 || col < 0){
       return false;
     }
+    if (board[row][col] == 0){
+      board[row][col] = counter;
+      return true;
+    }
+    return false;
     }
   }
 }
