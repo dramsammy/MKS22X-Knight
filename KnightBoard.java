@@ -58,6 +58,18 @@ public class KnightBoard{
     if (counter > rows * col){
       return true; // counter is greater than number of possible moves around the board stop recursion
     }
+    else{
+      if (AK(row,col,counter)){//if the knight can be added
+        solveH(row+1,col-2,level+1);
+        solveH(row-1,col-2,level+1);
+        solveH(row-1,col+2,level+1);
+        solveH(row+1,col+2,level+1);
+        solveH(row-2,col-1,level+1);
+        solveH(row-2,col+1,level+1);
+        solveH(row+2,col-1,level+1);
+        solveH(row+2,col+1,level+1);
+      }
+    }
   }
   }
 }
