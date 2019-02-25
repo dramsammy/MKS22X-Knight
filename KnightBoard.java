@@ -70,6 +70,12 @@ public class KnightBoard{
         solveH(row+2,col+1,level+1);
       }
     }
+    return false;
   }
+  public boolean solve(int row, int col, int counter){
+    if (startingRows <= 0 || startingCols <= 0){
+      throw new IllegalArgumentException();
+    }
+    return solveH(row,col,0);
   }
 }
