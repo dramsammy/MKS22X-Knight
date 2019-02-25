@@ -41,11 +41,13 @@ public class KnightBoard{
     return true;
   }
 
-  private boolean AK(int row, int col){
+  private boolean AK(int row, int col, int counter){
     if (board[row][col] != 0){
       return false;
     }
-    if (row)
+    if (row > rows || col > cols || row < 0 || col < 0){
+      return false;
+    }
     }
   }
 }
