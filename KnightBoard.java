@@ -54,5 +54,8 @@ public class KnightBoard{
     }
     return false;
     }
+  public boolean solveH(int row, int col, int counter){
+    
+  }
   }
 }
