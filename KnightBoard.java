@@ -36,8 +36,16 @@ public class KnightBoard{
   return returnValue;
 }
 
-  private boolean RK(int rows, int cols){
-    board[rows][cols] = 0;
+  private boolean RK(int row, int col){
+    board[row][col] = 0;
     return true;
+  }
+
+  private boolean AK(int row, int col){
+    if (board[row][col] != 0){
+      return false;
+    }
+    if (row)
+    }
   }
 }
