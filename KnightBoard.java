@@ -86,8 +86,13 @@ public class KnightBoard{
       }
   }
 }
+  public int countSolutions(int row, int col){
+    return countSolutionsH(row, col, 1);
+  }
   public static void main(String[] args) {
     KnightBoard board = new KnightBoard(5,5);
     System.out.println(board.solve(0,0));
+    KnightBoard test1 = new KnightBoard(4,4);
+    System.out.println(test1.solve(0,0));
   }
 }
