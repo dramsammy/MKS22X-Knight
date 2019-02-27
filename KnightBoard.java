@@ -95,16 +95,16 @@ public class KnightBoard{
     if (row >= board.length || row < 0 || col >= board[0].length || col < 0){
       return 0;
     }
-    if (level-1 == rows * cols){
+    if (counter == rows * cols){
       count++;
     }
-    for(int i = 0; i < rows; i++){
-      for (int a = 0; a < cols; a++){
-        if (solve(i,a)){
-          count++;
-        }
+    AK(row, col, counter);
+    for (int i = 0; i < moves.length; i += 2) {
+      if (row + moves[i] < rows && row + moves[i] >= 0 && col + moves[i + 1] < cols && col + moves[i + 1] >= 0 && board[row + moves[i]][col + moves[i + 1]] == 0) {
+        count += countSolutionsH(row + moves[i], col + moves[i+1], counter + 1);
       }
     }
+    RK(row, col);
     return count;
     }
 
