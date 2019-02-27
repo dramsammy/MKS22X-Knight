@@ -89,10 +89,27 @@ public class KnightBoard{
   public int countSolutions(int row, int col){
     return countSolutionsH(row, col, 1);
   }
+  public int countSolutionsH(int row, int col, int counter){
+    int count = 0;
+    if (row >= board.length || row < 0 || col >= board[0].length || col < 0){
+      return 0;
+    }
+    for(int i = 0; i < rows; i++){
+      for (int a = 0; a < cols; a++){
+        if (solve(i,a)){
+          count++;
+        }
+      }
+    }
+    return count;
+    }
+
+
   public static void main(String[] args) {
     KnightBoard board = new KnightBoard(5,5);
     System.out.println(board.solve(0,0));
     KnightBoard test1 = new KnightBoard(4,4);
     System.out.println(test1.solve(0,0));
+    System.out.println(board.countSolutions(1,1));
   }
 }
