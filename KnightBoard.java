@@ -95,6 +95,9 @@ public class KnightBoard{
     if (row >= board.length || row < 0 || col >= board[0].length || col < 0){
       return 0;
     }
+    if (level-1 == rows * cols){
+      count++;
+    }
     for(int i = 0; i < rows; i++){
       for (int a = 0; a < cols; a++){
         if (solve(i,a)){
