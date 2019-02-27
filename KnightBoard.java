@@ -59,24 +59,17 @@ public class KnightBoard{
     if (counter > rows * col){
       return true; // counter is greater than number of possible moves around the board stop recursion
     }
+    if (AK(row,col,counter)){//if the knight can be added
+      if(solveH(row+1,col-2,counter+1) || solveH(row-1,col-2,counter+1) || solveH(row-1,col+2,counter+1) || solveH(row+1,col+2,counter+1) || solveH(row-2,col-1,counter+1) || solveH(row-2,col+1,counter+1) || solveH(row+2,col-1,counter+1) || solveH(row+2,col+1,counter+1)){
+      return true;
+    }
     else{
-      if (AK(row,col,counter)){//if the knight can be added
-        solveH(row+1,col-2,counter+1);
-        solveH(row-1,col-2,counter+1);
-        solveH(row-1,col+2,counter+1);
-        solveH(row+1,col+2,counter+1);
-        solveH(row-2,col-1,counter+1);
-        solveH(row-2,col+1,counter+1);
-        solveH(row+2,col-1,counter+1);
-        solveH(row+2,col+1,counter+1);
-        return true;
-      }
-      else{
-        RK(row,col);
+      RK(row,col);
       }
     }
     return false;
   }
+
   public boolean solve(int row, int col){
     return solveH(row,col,1);
   }
@@ -115,5 +108,8 @@ public class KnightBoard{
     KnightBoard test1 = new KnightBoard(4,4);
     System.out.println(test1.solve(0,0));
     System.out.println(board.countSolutions(0,0));
+    System.out.println(test1.countSolutions(1,1));
+    System.out.println(board);
+
   }
 }
