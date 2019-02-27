@@ -2,6 +2,7 @@ public class KnightBoard{
   private int[][] board;
   private int rows;
   private int cols;
+  public static int[] moves = {1,2,1,-2,-1,2,-1,-2,2,1,2,-1,-2,1,-2,-1};
   public KnightBoard(int startingRows, int startingCols){
     if (startingRows <= 0 || startingCols <= 0){
       throw new IllegalArgumentException();
