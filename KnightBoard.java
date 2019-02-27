@@ -114,6 +114,6 @@ public class KnightBoard{
     System.out.println(board.solve(0,0));
     KnightBoard test1 = new KnightBoard(4,4);
     System.out.println(test1.solve(0,0));
-    System.out.println(board.countSolutions(1,1));
+    System.out.println(board.countSolutions(0,0));
   }
 }
