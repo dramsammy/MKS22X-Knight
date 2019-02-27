@@ -60,14 +60,14 @@ public class KnightBoard{
     }
     else{
       if (AK(row,col,counter)){//if the knight can be added
-        solveH(row+1,col-2,level+1);
-        solveH(row-1,col-2,level+1);
-        solveH(row-1,col+2,level+1);
-        solveH(row+1,col+2,level+1);
-        solveH(row-2,col-1,level+1);
-        solveH(row-2,col+1,level+1);
-        solveH(row+2,col-1,level+1);
-        solveH(row+2,col+1,level+1);
+        solveH(row+1,col-2,counter+1);
+        solveH(row-1,col-2,counter+1);
+        solveH(row-1,col+2,counter+1);
+        solveH(row+1,col+2,counter+1);
+        solveH(row-2,col-1,counter+1);
+        solveH(row-2,col+1,counter+1);
+        solveH(row+2,col-1,counter+1);
+        solveH(row+2,col+1,counter+1);
         return true;
       }
       else{
@@ -76,16 +76,18 @@ public class KnightBoard{
     }
     return false;
   }
-  public boolean solve(int row, int col, int counter){
-    if (startingRows <= 0 || startingCols <= 0){
-      throw new IllegalArgumentException();
-    }
-    return solveH(row,col,0);
+  public boolean solve(int row, int col){
+    return solveH(row,col,1);
   }
   private void clearBoard(){
     for (int i=0;i<board.length;i++) {
       for (int j=0;j<board[i].length;j++){
         board[i][j] = 0;
       }
+  }
+}
+  public static void main(String[] args) {
+    KnightBoard board = new KnightBoard(5,5);
+    System.out.println(board.solve(0,0));
   }
 }
